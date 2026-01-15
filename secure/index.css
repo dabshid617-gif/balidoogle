@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+body { font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif; }
+.safe-pb { padding-bottom: env(safe-area-inset-bottom); }
+
+/* Styled select for location dropdown */
+.styled-select {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23374851' stroke-width='1.6'%3E%3Cpath d='M6 9l6 6 6-6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 12px center;
+	background-size: 16px 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.styled-select {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D1D5DB' stroke-width='1.6'%3E%3Cpath d='M6 9l6 6 6-6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	}
+}
+
+.styled-select:focus {
+	box-shadow: 0 0 0 4px rgba(14,165,164,0.12);
+	outline: none;
+}
+
+/* Slightly larger hit area for the select on desktop */
+@media (min-width: 768px) {
+	.styled-select { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+}
